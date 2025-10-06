@@ -1,0 +1,461 @@
+{
+  "id": "cd493e27-dd63-4c70-98ce-a77f7ffcc1e3",
+  "revision": 0,
+  "last_node_id": 22,
+  "last_link_id": 33,
+  "nodes": [
+    {
+      "id": 18,
+      "type": "MarkdownNote",
+      "pos": [
+        1760,
+        1560
+      ],
+      "size": [
+        270,
+        140
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "About API Node",
+      "properties": {
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "The Seedream4.0 supports up to 10 reference images for input. You can use batch images to create an image batch as input images."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 7,
+      "type": "MarkdownNote",
+      "pos": [
+        1210,
+        280
+      ],
+      "size": [
+        430,
+        190
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "About API Node",
+      "properties": {
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "[About API Node](https://docs.comfy.org/tutorials/api-nodes/overview) | [Pricing](https://docs.comfy.org/tutorials/api-nodes/pricing)\n\nTo use the API, you must be in a secure network environment:\n\n- Allows access from `127.0.0.1` or `localhost`.\n\n- Use our API Node in website services starting with `https`\n\n- Make sure you can normally connect to our API services (some regions may need a proxy).\n\n- Make sure you are logged in in the settings and that your account still has enough credits to cover the consumption of API calls.\n\n- On non-whitelisted sites or local area networks (LANs), please try to [log in using an API Key](https://docs.comfy.org/interface/user#logging-in-with-an-api-key)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 11,
+      "type": "LoadImage",
+      "pos": [
+        1700,
+        270.28338623046875
+      ],
+      "size": [
+        351.2142639160156,
+        499.71661376953125
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "image": true,
+            "upload": true
+          }
+        }
+      },
+      "widgets_values": [
+        "ComfyUI_temp_psiri_00001_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "MarkdownNote",
+      "pos": [
+        2090,
+        140
+      ],
+      "size": [
+        390,
+        120
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "About Seedream 4.0",
+      "properties": {
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "The Seedream 4.0 supports multiple tasks in one model, so the settings of these API nodes might be a little bit complex. Select the node, then click the \"?\" icon on the selection toolbox to check the node document.\n\n\nTake the action scene with two humanoid figures as the base. Keep the geometry and structure (stairs, walls, open background) unchanged. Apply the visual style of the snowy icy landscape reference image to the environment: frosted cliffs, snowy surfaces, bright winter light. Leave the characters untouched.\n\nTransform the image into a realistic cinematic still. Preserve the original composition, poses, and environment, but enhance all materials, lighting, and textures to look natural and physically accurate. Add fine surface details, realistic reflections, subtle imperfections. The final image should feel like a real scene captured on a professional camera, not a render.\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 22,
+      "type": "SaveImage",
+      "pos": [
+        2545.23095703125,
+        255.8055419921875
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.62",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "filename_prefix": true
+          }
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ByteDanceSeedreamNode",
+      "pos": [
+        2090,
+        320
+      ],
+      "size": [
+        400,
+        440
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.58",
+        "Node name for S&R": "ByteDanceSeedreamNode",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "model": true,
+            "prompt": true,
+            "size_preset": true,
+            "width": true,
+            "height": true,
+            "sequential_image_generation": true,
+            "max_images": true,
+            "seed": true,
+            "watermark": true,
+            "fail_on_partial": true
+          }
+        }
+      },
+      "widgets_values": [
+        "seedream-4-0-250828",
+        "Take the action scene with two humanoid figures as the base. Smooth the geometry but keep the structure (stairs, walls, open background) unchanged. Apply the visual style of the snowy icy landscape reference image to the environment: frosted cliffs, snowy surfaces, bright winter light. Leave the characters untouched.  make the final background to look photoreal\n",
+        "2560x1440 (16:9)",
+        2048,
+        2048,
+        "disabled",
+        1,
+        137801166,
+        "randomize",
+        false,
+        true
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": [
+        1531.586181640625,
+        1039.6607666015625
+      ],
+      "size": [
+        274.080078125,
+        314.00006103515625
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "image": true,
+            "upload": true
+          }
+        }
+      },
+      "widgets_values": [
+        "ComfyUI_00616_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "LoadImage",
+      "pos": [
+        1173.310302734375,
+        1045.48876953125
+      ],
+      "size": [
+        274.080078125,
+        314.00006103515625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "image": true,
+            "upload": true
+          }
+        }
+      },
+      "widgets_values": [
+        "pasted/image (41).png",
+        "image"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "ImageBatch",
+      "pos": [
+        1851.87353515625,
+        1017.034423828125
+      ],
+      "size": [
+        200,
+        50
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "Node name for S&R": "ImageBatch",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      11,
+      14,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      15,
+      0,
+      16,
+      1,
+      "IMAGE"
+    ],
+    [
+      30,
+      1,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      16,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Multiple images input example",
+      "bounding": [
+        1130,
+        830,
+        930,
+        920
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Use Ctrl-B to enable image input",
+      "bounding": [
+        1660,
+        240,
+        400,
+        560
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5290100292488001,
+      "offset": [
+        -1012.0809117132253,
+        -17.398386204625044
+      ]
+    },
+    "frontendVersion": "1.27.7",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
