@@ -3193,7 +3193,7 @@
         }
       },
       "widgets_values": [
-        "OmniSR 4x DIV2K.pth",
+        "OmniSR 4x DIV2K.safetensors",
         "nearest-exact",
         2,
         "auto"

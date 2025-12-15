@@ -870,7 +870,7 @@
         "Node name for S&R": "DepthAnythingPreprocessor"
       },
       "widgets_values": [
-        "depth_anything_vitl14.pth",
+        "depth_anything_vitl14.safetensors",
         512
       ]
     },

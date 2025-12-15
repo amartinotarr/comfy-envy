@@ -567,7 +567,7 @@
         }
       },
       "widgets_values": [
-        "OmniSR 4x DIV2K.pth",
+        "OmniSR 4x DIV2K.safetensors",
         "nearest-exact",
         2,
         "auto"
@@ -1640,7 +1640,7 @@
         }
       },
       "widgets_values": [
-        "models_t5_umt5-xxl-enc-bf16.pth",
+        "models_t5_umt5-xxl-enc-bf16.safetensors",
         "bf16",
         "offload_device",
         "disabled"
