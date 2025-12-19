@@ -663,29 +663,24 @@
     },
     {
       "id": 127,
-      "type": "WanVideoTextEmbedBridge",
+      "type": "WanVideoTextEncodeCached",
       "pos": [
-        502.33331298828125,
-        -784.9783325195312
+        -80.50688171386719,
+        -1102.939453125
       ],
       "size": [
-        222.00253295898438,
-        46
+        488.4488220214844,
+        362.56817626953125
       ],
       "flags": {},
       "order": 42,
       "mode": 0,
       "inputs": [
         {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 249
-        },
-        {
-          "name": "negative",
+          "name": "extender_args",
           "shape": 7,
-          "type": "CONDITIONING",
-          "link": 250
+          "type": "WANVIDEOPROMPTEXTENDER_ARGS",
+          "link": null
         }
       ],
       "outputs": [
@@ -696,61 +691,43 @@
             247,
             248
           ]
+        },
+        {
+          "name": "negative_text_embeds",
+          "type": "WANVIDEOTEXTEMBEDS",
+          "links": null
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": null
         }
       ],
       "properties": {
         "cnr_id": "ComfyUI-WanVideoWrapper",
-        "ver": "4bc1ffee24a14f304b16c315d1d0cc2debffd989",
-        "Node name for S&R": "WanVideoTextEmbedBridge",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 130,
-      "type": "CLIPLoader",
-      "pos": [
-        -91.51947021484375,
-        -1613.69580078125
-      ],
-      "size": [
-        353.2510070800781,
-        106
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            251,
-            252
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.59",
-        "Node name for S&R": "CLIPLoader",
+        "ver": "998a69cc0acbec503001b8b0ce0a5d5404420e1e",
+        "Node name for S&R": "WanVideoTextEncodeCached",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
-            "clip_name": true,
-            "type": true,
+            "model_name": true,
+            "precision": true,
+            "positive_prompt": true,
+            "negative_prompt": true,
+            "quantization": true,
+            "use_disk_cache": true,
             "device": true
           }
         }
       },
       "widgets_values": [
-        "umt5_xxl_fp16.safetensors",
-        "wan",
-        "default"
+        "umt5-xxl-enc-bf16.safetensors",
+        "bf16",
+        "Epic cinematic battle scene: Two highly detailed fantasy warriors locked in tense confrontation on snow-covered stone steps amidst icy mountain cliffs under bright daylight.\n\nCharacter 1 (Left): A Black man with long curly dreadlocks, intense gaze, wearing an ornate black military-style coat with gold embroidery, gold buttons, high collar, flowing cape with brown inner lining and intricate golden hem patterns. Tight black pants with gold vertical stripes, black gloves, and tall boots with gold embellishments. He stands aggressively forward, left arm extended as if casting or challenging, right hand clenched.\n\nCharacter 2 (Right, back mostly turned): An East Asian man with platinum blonde swept-back hair and light beard stubble, wearing a luxurious long white tailcoat with royal blue satin lapels and inner lining, a ruched royal blue vest with gold buttons, white trousers, and white sneakers with blue accents and gold circular emblems. His left hand is partially tucked into his pocket, right arm slightly raised mid-motion — captured mid-turn as if dodging or preparing to strike. His back faces the viewer, head turned over shoulder to lock eyes with Character 1. On his chest: a steampunk-inspired mechanical brooch with red tassels and brass gears. Gold cufflinks and layered necklaces visible.\n\nAction & Composition: They are frozen mid-combat — one advancing, one retreating but ready to counter. Intense eye contact across the frame. Snow dust kicked up around their feet. Background: towering snow-capped mountains, hanging icicles, clear blue sky. Ultra-detailed textures, photorealistic lighting, sharp focus on fabric folds, metallic sheen, facial expressions, and accessories. DO NOT SIMPLIFY OR LOSE ANY DETAIL — every button, seam, emblem, and hair strand must be preserved. Style: High-end digital painting meets cinematic realism.",
+        "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走\n\nlow quality, blurry, deformed hands, extra limbs, simplified clothing, cartoonish, low detail, missing accessories",
+        "disabled",
+        false,
+        "gpu"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -3700,100 +3677,6 @@
       "widgets_values": []
     },
     {
-      "id": 128,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -80.50688171386719,
-        -1102.939453125
-      ],
-      "size": [
-        398.5031433105469,
-        202.13461303710938
-      ],
-      "flags": {},
-      "order": 29,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 252
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            249
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.59",
-        "Node name for S&R": "CLIPTextEncode",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "text": true
-          }
-        }
-      },
-      "widgets_values": [
-        "Epic cinematic battle scene: Two highly detailed fantasy warriors locked in tense confrontation on snow-covered stone steps amidst icy mountain cliffs under bright daylight.\n\nCharacter 1 (Left): A Black man with long curly dreadlocks, intense gaze, wearing an ornate black military-style coat with gold embroidery, gold buttons, high collar, flowing cape with brown inner lining and intricate golden hem patterns. Tight black pants with gold vertical stripes, black gloves, and tall boots with gold embellishments. He stands aggressively forward, left arm extended as if casting or challenging, right hand clenched.\n\nCharacter 2 (Right, back mostly turned): An East Asian man with platinum blonde swept-back hair and light beard stubble, wearing a luxurious long white tailcoat with royal blue satin lapels and inner lining, a ruched royal blue vest with gold buttons, white trousers, and white sneakers with blue accents and gold circular emblems. His left hand is partially tucked into his pocket, right arm slightly raised mid-motion — captured mid-turn as if dodging or preparing to strike. His back faces the viewer, head turned over shoulder to lock eyes with Character 1. On his chest: a steampunk-inspired mechanical brooch with red tassels and brass gears. Gold cufflinks and layered necklaces visible.\n\nAction & Composition: They are frozen mid-combat — one advancing, one retreating but ready to counter. Intense eye contact across the frame. Snow dust kicked up around their feet. Background: towering snow-capped mountains, hanging icicles, clear blue sky. Ultra-detailed textures, photorealistic lighting, sharp focus on fabric folds, metallic sheen, facial expressions, and accessories. DO NOT SIMPLIFY OR LOSE ANY DETAIL — every button, seam, emblem, and hair strand must be preserved. Style: High-end digital painting meets cinematic realism."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 129,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -16.760835647583008,
-        -835.7720947265625
-      ],
-      "size": [
-        392.74102783203125,
-        145.83609008789062
-      ],
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 251
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            250
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.59",
-        "Node name for S&R": "CLIPTextEncode",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "text": true
-          }
-        }
-      },
-      "widgets_values": [
-        "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走\n\nlow quality, blurry, deformed hands, extra limbs, simplified clothing, cartoonish, low detail, missing accessories"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 136,
       "type": "PreviewImage",
       "pos": [
@@ -4104,38 +3987,6 @@
       90,
       2,
       "WANVIDEOTEXTEMBEDS"
-    ],
-    [
-      249,
-      128,
-      0,
-      127,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      250,
-      129,
-      0,
-      127,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      251,
-      130,
-      0,
-      129,
-      0,
-      "CLIP"
-    ],
-    [
-      252,
-      130,
-      0,
-      128,
-      0,
-      "CLIP"
     ],
     [
       260,
