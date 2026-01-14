@@ -15,12 +15,51 @@ class HexListToRGBTuples:
     CATEGORY = "ColorTools"
 
     def convert_list(self, hex_list, normalize):
-        lines = hex_list.strip().splitlines()
+        import re
+        import json
+        
+        # Debug: show raw input
+        print(f"[comfy_color_tools] Raw input type: {type(hex_list)}, repr: {repr(hex_list[:200]) if len(hex_list) > 200 else repr(hex_list)}")
+        
+        text = hex_list.strip()
+        
+        # Handle JSON-serialized input (e.g., from easy showAnything or similar nodes)
+        # Input might look like: '[\n]\n    "#c03b88\\n#e06c4d\\n..."'
+        # Or a Python list representation: ['#c03b88', '#e06c4d', ...]
+        
+        # Try to parse as JSON first
+        try:
+            parsed = json.loads(text)
+            if isinstance(parsed, list):
+                # It's a JSON array - join elements
+                text = '\n'.join(str(item) for item in parsed)
+                print(f"[comfy_color_tools] Parsed JSON array with {len(parsed)} elements")
+            elif isinstance(parsed, str):
+                text = parsed
+                print(f"[comfy_color_tools] Parsed JSON string")
+        except (json.JSONDecodeError, TypeError):
+            pass
+        
+        # Handle escaped newlines (literal \n in string)
+        if '\\n' in text:
+            text = text.replace('\\n', '\n')
+            print(f"[comfy_color_tools] Unescaped \\n characters")
+        
+        # Remove JSON artifacts: brackets, quotes
+        text = re.sub(r'[\[\]"\']+', '', text)
+        
+        # Handle multiple separator formats: newlines, commas, semicolons, or spaces
+        # First normalize all separators to newlines
+        normalized = re.sub(r'[,;\s]+', '\n', text.strip())
+        lines = normalized.splitlines()
         rgb_tuples = []
 
         for line in lines:
             hex_code = line.strip().lstrip("#")
+            if not hex_code:
+                continue
             if len(hex_code) != 6:
+                print(f"[comfy_color_tools] Warning: Skipping invalid hex code '{line.strip()}' (length {len(hex_code)}, expected 6)")
                 continue
             try:
                 r, g, b = tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
@@ -28,8 +67,14 @@ class HexListToRGBTuples:
                     rgb_tuples.append((r / 255.0, g / 255.0, b / 255.0))
                 else:
                     rgb_tuples.append((r, g, b))
-            except ValueError:
+            except ValueError as e:
+                print(f"[comfy_color_tools] Warning: Failed to parse hex code '{line.strip()}': {e}")
                 continue
+
+        if not rgb_tuples:
+            print(f"[comfy_color_tools] Warning: No valid hex codes found in input: '{hex_list[:100]}...'")
+        else:
+            print(f"[comfy_color_tools] Converted {len(rgb_tuples)} hex codes to RGB tuples")
 
         return (rgb_tuples,)
 
