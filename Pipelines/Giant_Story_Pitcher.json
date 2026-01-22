@@ -20,46 +20,89 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 64
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": null
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": 61
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
           "link": null
         },
         {
+          "localized_name": "system",
           "name": "system",
           "type": "STRING",
           "widget": {
             "name": "system"
           },
           "link": 60
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -67,16 +110,19 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": []
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -118,11 +164,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "link": 199
         },
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "widget": {
@@ -133,6 +181,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -172,6 +221,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "width",
           "name": "width",
           "type": "INT",
           "widget": {
@@ -180,16 +230,27 @@
           "link": 350
         },
         {
+          "localized_name": "height",
           "name": "height",
           "type": "INT",
           "widget": {
             "name": "height"
           },
           "link": 351
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
@@ -230,9 +291,20 @@
       "flags": {},
       "order": 0,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "VAE",
           "name": "VAE",
           "type": "VAE",
           "links": [
@@ -251,7 +323,7 @@
         }
       },
       "widgets_values": [
-        "qwen\\qwen_image_vae.safetensors"
+        "qwen/qwen_image_vae.safetensors"
       ]
     },
     {
@@ -268,9 +340,39 @@
       "flags": {},
       "order": 1,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "CLIP",
           "name": "CLIP",
           "type": "CLIP",
           "links": [
@@ -289,7 +391,7 @@
         }
       },
       "widgets_values": [
-        "qwen\\qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "qwen/qwen_2.5_vl_7b_fp8_scaled.safetensors",
         "qwen_image",
         "default"
       ]
@@ -308,9 +410,29 @@
       "flags": {},
       "order": 2,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
@@ -329,7 +451,7 @@
         }
       },
       "widgets_values": [
-        "qwen\\qwen_image_fp8_e4m3fn.safetensors",
+        "qwen/qwen_image_fp8_e4m3fn.safetensors",
         "default"
       ]
     },
@@ -349,11 +471,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "any_1",
           "name": "any_1",
           "type": "*",
           "link": 210
         },
         {
+          "localized_name": "any_2",
           "name": "any_2",
           "type": "*",
           "link": 216
@@ -361,6 +485,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "batch",
           "name": "batch",
           "type": "*",
           "links": [
@@ -396,11 +521,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "samples",
           "name": "samples",
           "type": "LATENT",
           "link": 206
         },
         {
+          "localized_name": "vae",
           "name": "vae",
           "type": "VAE",
           "link": 207
@@ -408,6 +535,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -444,12 +572,14 @@
       "mode": 2,
       "inputs": [
         {
+          "localized_name": "flow",
           "name": "flow",
           "shape": 5,
           "type": "FLOW_CONTROL",
           "link": 208
         },
         {
+          "localized_name": "initial_value1",
           "name": "initial_value1",
           "shape": 7,
           "type": "*",
@@ -463,6 +593,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "value1",
           "name": "value1",
           "type": "*",
           "links": [
@@ -679,7 +810,6 @@
           "link": null
         },
         {
-          "dir": 3,
           "name": "ctx_05",
           "type": "RGTHREE_CONTEXT",
           "link": null
@@ -977,13 +1107,13 @@
         },
         {
           "on": true,
-          "lora": "qwen\\Qwen-Image-Lightning-4steps-V1.0.safetensors",
+          "lora": "qwen/Qwen-Image-Lightning-4steps-V1.0.safetensors",
           "strength": 1,
           "strengthTwo": null
         },
         {
           "on": true,
-          "lora": "qwen\\flymy_realism.safetensors",
+          "lora": "qwen/flymy_realism.safetensors",
           "strength": 0.25,
           "strengthTwo": null
         },
@@ -1007,13 +1137,24 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "link": 201
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -1051,28 +1192,87 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 204
         },
         {
+          "localized_name": "positive",
           "name": "positive",
           "type": "CONDITIONING",
           "link": 203
         },
         {
+          "localized_name": "negative",
           "name": "negative",
           "type": "CONDITIONING",
           "link": 202
         },
         {
+          "localized_name": "latent_image",
           "name": "latent_image",
           "type": "LATENT",
           "link": 205
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
@@ -1116,13 +1316,24 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 154
+        },
+        {
+          "localized_name": "shift",
+          "name": "shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
@@ -1160,9 +1371,19 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 246
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -1196,9 +1417,19 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 95
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -1232,6 +1463,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "width",
           "name": "width",
           "type": "INT",
           "widget": {
@@ -1240,16 +1472,36 @@
           "link": 345
         },
         {
+          "localized_name": "height",
           "name": "height",
           "type": "INT",
           "widget": {
             "name": "height"
           },
           "link": 346
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "color",
+          "name": "color",
+          "type": "INT",
+          "widget": {
+            "name": "color"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -1293,12 +1545,14 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "initial_value1",
           "name": "initial_value1",
           "shape": 7,
           "type": "*",
           "link": 348
         },
         {
+          "localized_name": "total",
           "name": "total",
           "type": "INT",
           "widget": {
@@ -1314,6 +1568,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "flow",
           "name": "flow",
           "shape": 5,
           "type": "FLOW_CONTROL",
@@ -1322,6 +1577,7 @@
           ]
         },
         {
+          "localized_name": "index",
           "name": "index",
           "type": "INT",
           "links": [
@@ -1329,6 +1585,7 @@
           ]
         },
         {
+          "localized_name": "value1",
           "name": "value1",
           "type": "*",
           "links": [
@@ -1368,20 +1625,49 @@
       ],
       "size": [
         270,
-        82
+        106
       ],
       "flags": {},
       "order": 55,
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "link": 347
+        },
+        {
+          "localized_name": "upscale_method",
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "megapixels",
+          "name": "megapixels",
+          "type": "FLOAT",
+          "widget": {
+            "name": "megapixels"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution_steps",
+          "name": "resolution_steps",
+          "type": "INT",
+          "widget": {
+            "name": "resolution_steps"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -1402,7 +1688,8 @@
       },
       "widgets_values": [
         "nearest-exact",
-        1.76
+        1.76,
+        1
       ]
     },
     {
@@ -1413,7 +1700,7 @@
         5811.64208984375
       ],
       "size": [
-        159.50155639648438,
+        162.8169921875,
         66
       ],
       "flags": {},
@@ -1421,6 +1708,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "link": 349
@@ -1428,6 +1716,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "width",
           "name": "width",
           "type": "INT",
           "links": [
@@ -1435,6 +1724,7 @@
           ]
         },
         {
+          "localized_name": "height",
           "name": "height",
           "type": "INT",
           "links": [
@@ -1442,6 +1732,7 @@
           ]
         },
         {
+          "localized_name": "count",
           "name": "count",
           "type": "INT",
           "links": null
@@ -1473,9 +1764,20 @@
       "flags": {},
       "order": 3,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "string",
+          "name": "string",
+          "type": "STRING",
+          "widget": {
+            "name": "string"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "string",
           "name": "string",
           "type": "STRING",
           "links": []
@@ -1512,36 +1814,42 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 42
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": 326
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
           "link": null
         },
         {
+          "localized_name": "system",
           "name": "system",
           "type": "STRING",
           "widget": {
@@ -1550,16 +1858,45 @@
           "link": 41
         },
         {
+          "localized_name": "prompt",
           "name": "prompt",
           "type": "STRING",
           "widget": {
             "name": "prompt"
           },
           "link": 45
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -1568,16 +1905,19 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": []
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -1620,9 +1960,20 @@
       },
       "order": 4,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -1661,9 +2012,20 @@
       },
       "order": 5,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -1704,6 +2066,133 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "enable_mirostat",
+          "name": "enable_mirostat",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat",
+          "name": "mirostat",
+          "type": "INT",
+          "widget": {
+            "name": "mirostat"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_mirostat_eta",
+          "name": "enable_mirostat_eta",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat_eta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat_eta",
+          "name": "mirostat_eta",
+          "type": "FLOAT",
+          "widget": {
+            "name": "mirostat_eta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_mirostat_tau",
+          "name": "enable_mirostat_tau",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat_tau"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat_tau",
+          "name": "mirostat_tau",
+          "type": "FLOAT",
+          "widget": {
+            "name": "mirostat_tau"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_num_ctx",
+          "name": "enable_num_ctx",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_num_ctx"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "num_ctx",
+          "name": "num_ctx",
+          "type": "INT",
+          "widget": {
+            "name": "num_ctx"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_repeat_last_n",
+          "name": "enable_repeat_last_n",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_repeat_last_n"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "repeat_last_n",
+          "name": "repeat_last_n",
+          "type": "INT",
+          "widget": {
+            "name": "repeat_last_n"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_repeat_penalty",
+          "name": "enable_repeat_penalty",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_repeat_penalty"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "repeat_penalty",
+          "name": "repeat_penalty",
+          "type": "FLOAT",
+          "widget": {
+            "name": "repeat_penalty"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_temperature",
+          "name": "enable_temperature",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_seed",
           "name": "enable_seed",
           "type": "BOOLEAN",
           "widget": {
@@ -1712,16 +2201,135 @@
           "link": 327
         },
         {
+          "localized_name": "seed",
           "name": "seed",
           "type": "INT",
           "widget": {
             "name": "seed"
           },
           "link": 330
+        },
+        {
+          "localized_name": "enable_stop",
+          "name": "enable_stop",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_stop"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "stop",
+          "name": "stop",
+          "type": "STRING",
+          "widget": {
+            "name": "stop"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_tfs_z",
+          "name": "enable_tfs_z",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_tfs_z"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "tfs_z",
+          "name": "tfs_z",
+          "type": "FLOAT",
+          "widget": {
+            "name": "tfs_z"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_num_predict",
+          "name": "enable_num_predict",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_num_predict"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "num_predict",
+          "name": "num_predict",
+          "type": "INT",
+          "widget": {
+            "name": "num_predict"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_top_k",
+          "name": "enable_top_k",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_k",
+          "name": "top_k",
+          "type": "INT",
+          "widget": {
+            "name": "top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_top_p",
+          "name": "enable_top_p",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_p",
+          "name": "top_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_min_p",
+          "name": "enable_min_p",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_min_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "min_p",
+          "name": "min_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "min_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "debug",
+          "name": "debug",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "options",
           "name": "options",
           "type": "OLLAMA_OPTIONS",
           "links": [
@@ -1793,6 +2401,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string",
           "name": "string",
           "type": "STRING",
           "widget": {
@@ -1801,6 +2410,16 @@
           "link": 43
         },
         {
+          "localized_name": "find",
+          "name": "find",
+          "type": "STRING",
+          "widget": {
+            "name": "find"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "replace",
           "name": "replace",
           "type": "STRING",
           "widget": {
@@ -1811,6 +2430,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -1855,9 +2475,76 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 57
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_delimiter",
+          "name": "filename_delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_delimiter"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_number_padding",
+          "name": "filename_number_padding",
+          "type": "INT",
+          "widget": {
+            "name": "filename_number_padding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "file_extension",
+          "name": "file_extension",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "file_extension"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "encoding",
+          "name": "encoding",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "encoding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_suffix",
+          "name": "filename_suffix",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_suffix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -1899,9 +2586,76 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 58
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_delimiter",
+          "name": "filename_delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_delimiter"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_number_padding",
+          "name": "filename_number_padding",
+          "type": "INT",
+          "widget": {
+            "name": "filename_number_padding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "file_extension",
+          "name": "file_extension",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "file_extension"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "encoding",
+          "name": "encoding",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "encoding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_suffix",
+          "name": "filename_suffix",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_suffix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -1941,36 +2695,42 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 47
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": 334
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
           "link": null
         },
         {
+          "localized_name": "system",
           "name": "system",
           "type": "STRING",
           "widget": {
@@ -1979,16 +2739,45 @@
           "link": 48
         },
         {
+          "localized_name": "prompt",
           "name": "prompt",
           "type": "STRING",
           "widget": {
             "name": "prompt"
           },
           "link": 437
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -1997,11 +2786,13 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": [
@@ -2010,6 +2801,7 @@
           ]
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -2050,9 +2842,47 @@
       "flags": {},
       "order": 6,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "url",
+          "name": "url",
+          "type": "STRING",
+          "widget": {
+            "name": "url"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_alive",
+          "name": "keep_alive",
+          "type": "INT",
+          "widget": {
+            "name": "keep_alive"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_alive_unit",
+          "name": "keep_alive_unit",
+          "type": "COMBO",
+          "widget": {
+            "name": "keep_alive_unit"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "connection",
           "name": "connection",
           "type": "OLLAMA_CONNECTIVITY",
           "links": [
@@ -2098,9 +2928,20 @@
       },
       "order": 7,
       "mode": 1,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "boolean",
           "name": "boolean",
           "type": "BOOLEAN",
           "links": [
@@ -2141,36 +2982,42 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 69
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": 295
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
           "link": null
         },
         {
+          "localized_name": "system",
           "name": "system",
           "type": "STRING",
           "widget": {
@@ -2179,16 +3026,45 @@
           "link": 293
         },
         {
+          "localized_name": "prompt",
           "name": "prompt",
           "type": "STRING",
           "widget": {
             "name": "prompt"
           },
           "link": 374
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -2197,16 +3073,19 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": []
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -2251,9 +3130,76 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 72
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_delimiter",
+          "name": "filename_delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_delimiter"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_number_padding",
+          "name": "filename_number_padding",
+          "type": "INT",
+          "widget": {
+            "name": "filename_number_padding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "file_extension",
+          "name": "file_extension",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "file_extension"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "encoding",
+          "name": "encoding",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "encoding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_suffix",
+          "name": "filename_suffix",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_suffix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -2295,6 +3241,133 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "enable_mirostat",
+          "name": "enable_mirostat",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat",
+          "name": "mirostat",
+          "type": "INT",
+          "widget": {
+            "name": "mirostat"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_mirostat_eta",
+          "name": "enable_mirostat_eta",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat_eta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat_eta",
+          "name": "mirostat_eta",
+          "type": "FLOAT",
+          "widget": {
+            "name": "mirostat_eta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_mirostat_tau",
+          "name": "enable_mirostat_tau",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat_tau"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat_tau",
+          "name": "mirostat_tau",
+          "type": "FLOAT",
+          "widget": {
+            "name": "mirostat_tau"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_num_ctx",
+          "name": "enable_num_ctx",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_num_ctx"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "num_ctx",
+          "name": "num_ctx",
+          "type": "INT",
+          "widget": {
+            "name": "num_ctx"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_repeat_last_n",
+          "name": "enable_repeat_last_n",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_repeat_last_n"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "repeat_last_n",
+          "name": "repeat_last_n",
+          "type": "INT",
+          "widget": {
+            "name": "repeat_last_n"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_repeat_penalty",
+          "name": "enable_repeat_penalty",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_repeat_penalty"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "repeat_penalty",
+          "name": "repeat_penalty",
+          "type": "FLOAT",
+          "widget": {
+            "name": "repeat_penalty"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_temperature",
+          "name": "enable_temperature",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_seed",
           "name": "enable_seed",
           "type": "BOOLEAN",
           "widget": {
@@ -2303,16 +3376,135 @@
           "link": 336
         },
         {
+          "localized_name": "seed",
           "name": "seed",
           "type": "INT",
           "widget": {
             "name": "seed"
           },
           "link": 335
+        },
+        {
+          "localized_name": "enable_stop",
+          "name": "enable_stop",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_stop"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "stop",
+          "name": "stop",
+          "type": "STRING",
+          "widget": {
+            "name": "stop"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_tfs_z",
+          "name": "enable_tfs_z",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_tfs_z"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "tfs_z",
+          "name": "tfs_z",
+          "type": "FLOAT",
+          "widget": {
+            "name": "tfs_z"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_num_predict",
+          "name": "enable_num_predict",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_num_predict"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "num_predict",
+          "name": "num_predict",
+          "type": "INT",
+          "widget": {
+            "name": "num_predict"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_top_k",
+          "name": "enable_top_k",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_k",
+          "name": "top_k",
+          "type": "INT",
+          "widget": {
+            "name": "top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_top_p",
+          "name": "enable_top_p",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_p",
+          "name": "top_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_min_p",
+          "name": "enable_min_p",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_min_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "min_p",
+          "name": "min_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "min_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "debug",
+          "name": "debug",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "options",
           "name": "options",
           "type": "OLLAMA_OPTIONS",
           "links": [
@@ -2384,9 +3576,76 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 63
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_delimiter",
+          "name": "filename_delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_delimiter"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_number_padding",
+          "name": "filename_number_padding",
+          "type": "INT",
+          "widget": {
+            "name": "filename_number_padding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "file_extension",
+          "name": "file_extension",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "file_extension"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "encoding",
+          "name": "encoding",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "encoding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_suffix",
+          "name": "filename_suffix",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_suffix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -2428,6 +3687,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 62
@@ -2435,6 +3695,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -2473,9 +3734,20 @@
       },
       "order": 8,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -2514,38 +3786,89 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 37
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": null
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": 59
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
+          "link": null
+        },
+        {
+          "localized_name": "system",
+          "name": "system",
+          "type": "STRING",
+          "widget": {
+            "name": "system"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
           "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -2553,16 +3876,19 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -2602,6 +3928,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 39
@@ -2609,6 +3936,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -2643,9 +3971,47 @@
       "flags": {},
       "order": 9,
       "mode": 4,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "url",
+          "name": "url",
+          "type": "STRING",
+          "widget": {
+            "name": "url"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_alive",
+          "name": "keep_alive",
+          "type": "INT",
+          "widget": {
+            "name": "keep_alive"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_alive_unit",
+          "name": "keep_alive_unit",
+          "type": "COMBO",
+          "widget": {
+            "name": "keep_alive_unit"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "connection",
           "name": "connection",
           "type": "OLLAMA_CONNECTIVITY",
           "links": [
@@ -2687,9 +4053,20 @@
       },
       "order": 10,
       "mode": 4,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "string",
+          "name": "string",
+          "type": "STRING",
+          "widget": {
+            "name": "string"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "string",
           "name": "string",
           "type": "STRING",
           "links": [
@@ -2728,12 +4105,50 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "multiline_text",
           "name": "multiline_text",
           "shape": 7,
           "type": "STRING",
           "link": 212
         },
         {
+          "localized_name": "file_path",
+          "name": "file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "file_path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dictionary_name",
+          "name": "dictionary_name",
+          "type": "STRING",
+          "widget": {
+            "name": "dictionary_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "label",
+          "name": "label",
+          "type": "STRING",
+          "widget": {
+            "name": "label"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "index",
           "name": "index",
           "type": "INT",
           "widget": {
@@ -2744,6 +4159,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "line_text",
           "name": "line_text",
           "type": "STRING",
           "links": [
@@ -2751,6 +4167,7 @@
           ]
         },
         {
+          "localized_name": "dictionary",
           "name": "dictionary",
           "type": "DICT",
           "links": []
@@ -2792,6 +4209,7 @@
       "mode": 4,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 265
@@ -2799,6 +4217,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -2835,6 +4254,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 71
@@ -2842,6 +4262,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -2880,9 +4301,20 @@
       },
       "order": 11,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "seed",
           "name": "seed",
           "type": "INT",
           "links": [
@@ -2924,9 +4356,20 @@
       },
       "order": 12,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -2967,6 +4410,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string_a",
           "name": "string_a",
           "type": "STRING",
           "widget": {
@@ -2975,16 +4419,27 @@
           "link": 217
         },
         {
+          "localized_name": "string_b",
           "name": "string_b",
           "type": "STRING",
           "widget": {
             "name": "string_b"
           },
           "link": 159
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -3019,7 +4474,7 @@
         4967.01806640625
       ],
       "size": [
-        197.712890625,
+        204.134765625,
         26
       ],
       "flags": {
@@ -3029,6 +4484,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "conditioning",
           "name": "conditioning",
           "type": "CONDITIONING",
           "link": 195
@@ -3036,6 +4492,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -3071,46 +4528,89 @@
       "mode": 4,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 258
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": null
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
           "link": null
         },
         {
+          "localized_name": "system",
           "name": "system",
           "type": "STRING",
           "widget": {
             "name": "system"
           },
           "link": 305
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -3118,16 +4618,19 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": []
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -3169,28 +4672,87 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 425
         },
         {
+          "localized_name": "positive",
           "name": "positive",
           "type": "CONDITIONING",
           "link": 392
         },
         {
+          "localized_name": "negative",
           "name": "negative",
           "type": "CONDITIONING",
           "link": 81
         },
         {
+          "localized_name": "latent_image",
           "name": "latent_image",
           "type": "LATENT",
           "link": 424
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
@@ -3232,9 +4794,20 @@
       "flags": {},
       "order": 13,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -3273,11 +4846,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "samples",
           "name": "samples",
           "type": "LATENT",
           "link": 85
         },
         {
+          "localized_name": "vae",
           "name": "vae",
           "type": "VAE",
           "link": 200
@@ -3285,6 +4860,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -3323,9 +4899,19 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 87
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -3361,11 +4947,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "link": 395
         },
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "widget": {
@@ -3376,6 +4964,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": []
@@ -3415,11 +5004,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "link": 194
         },
         {
+          "localized_name": "clip_l",
           "name": "clip_l",
           "type": "STRING",
           "widget": {
@@ -3428,16 +5019,27 @@
           "link": 378
         },
         {
+          "localized_name": "t5xxl",
           "name": "t5xxl",
           "type": "STRING",
           "widget": {
             "name": "t5xxl"
           },
           "link": 426
+        },
+        {
+          "localized_name": "guidance",
+          "name": "guidance",
+          "type": "FLOAT",
+          "widget": {
+            "name": "guidance"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -3479,9 +5081,20 @@
       "flags": {},
       "order": 14,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -3521,6 +5134,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string_a",
           "name": "string_a",
           "type": "STRING",
           "widget": {
@@ -3529,16 +5143,27 @@
           "link": 421
         },
         {
+          "localized_name": "string_b",
           "name": "string_b",
           "type": "STRING",
           "widget": {
             "name": "string_b"
           },
           "link": 373
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -3581,6 +5206,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 46
@@ -3588,6 +5214,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -3627,6 +5254,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "width",
           "name": "width",
           "type": "INT",
           "widget": {
@@ -3635,16 +5263,27 @@
           "link": 343
         },
         {
+          "localized_name": "height",
           "name": "height",
           "type": "INT",
           "widget": {
             "name": "height"
           },
           "link": 344
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
@@ -3769,13 +5408,24 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 101
+        },
+        {
+          "localized_name": "round_integer",
+          "name": "round_integer",
+          "type": "COMBO",
+          "widget": {
+            "name": "round_integer"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "INT",
           "name": "INT",
           "type": "INT",
           "links": [
@@ -3785,11 +5435,13 @@
           ]
         },
         {
+          "localized_name": "FLOAT",
           "name": "FLOAT",
           "type": "FLOAT",
           "links": null
         },
         {
+          "localized_name": "show_help",
           "name": "show_help",
           "type": "STRING",
           "links": null
@@ -3823,9 +5475,47 @@
       "flags": {},
       "order": 16,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "url",
+          "name": "url",
+          "type": "STRING",
+          "widget": {
+            "name": "url"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_alive",
+          "name": "keep_alive",
+          "type": "INT",
+          "widget": {
+            "name": "keep_alive"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_alive_unit",
+          "name": "keep_alive_unit",
+          "type": "COMBO",
+          "widget": {
+            "name": "keep_alive_unit"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "connection",
           "name": "connection",
           "type": "OLLAMA_CONNECTIVITY",
           "links": [
@@ -3868,13 +5558,24 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "conditioning",
           "name": "conditioning",
           "type": "CONDITIONING",
           "link": 420
+        },
+        {
+          "localized_name": "guidance",
+          "name": "guidance",
+          "type": "FLOAT",
+          "widget": {
+            "name": "guidance"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -3912,6 +5613,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "anything",
           "name": "anything",
           "shape": 7,
           "type": "*",
@@ -3920,6 +5622,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "output",
           "name": "output",
           "type": "*",
           "links": [
@@ -3959,16 +5662,76 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string",
           "name": "string",
           "type": "STRING",
           "widget": {
             "name": "string"
           },
           "link": 432
+        },
+        {
+          "localized_name": "regex_pattern",
+          "name": "regex_pattern",
+          "type": "STRING",
+          "widget": {
+            "name": "regex_pattern"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "replace",
+          "name": "replace",
+          "type": "STRING",
+          "widget": {
+            "name": "replace"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "case_insensitive",
+          "name": "case_insensitive",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "case_insensitive"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "multiline",
+          "name": "multiline",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "multiline"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dotall",
+          "name": "dotall",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "dotall"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "count",
+          "name": "count",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "count"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -4016,6 +5779,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 106
@@ -4023,6 +5787,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -4062,46 +5827,89 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 104
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": null
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
           "link": null
         },
         {
+          "localized_name": "system",
+          "name": "system",
+          "type": "STRING",
+          "widget": {
+            "name": "system"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
           "name": "prompt",
           "type": "STRING",
           "widget": {
             "name": "prompt"
           },
           "link": 358
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -4109,11 +5917,13 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": [
@@ -4121,6 +5931,7 @@
           ]
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -4162,38 +5973,89 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "connectivity",
           "name": "connectivity",
           "shape": 7,
           "type": "OLLAMA_CONNECTIVITY",
           "link": 98
         },
         {
+          "localized_name": "options",
           "name": "options",
           "shape": 7,
           "type": "OLLAMA_OPTIONS",
           "link": null
         },
         {
+          "localized_name": "images",
           "name": "images",
           "shape": 7,
           "type": "IMAGE",
           "link": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "shape": 7,
           "type": "OLLAMA_CONTEXT",
           "link": 435
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "shape": 7,
           "type": "OLLAMA_META",
+          "link": null
+        },
+        {
+          "localized_name": "system",
+          "name": "system",
+          "type": "STRING",
+          "widget": {
+            "name": "system"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "think",
+          "name": "think",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "think"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "keep_context",
+          "name": "keep_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "keep_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          },
           "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "result",
           "name": "result",
           "type": "STRING",
           "links": [
@@ -4201,16 +6063,19 @@
           ]
         },
         {
+          "localized_name": "thinking",
           "name": "thinking",
           "type": "STRING",
           "links": null
         },
         {
+          "localized_name": "context",
           "name": "context",
           "type": "OLLAMA_CONTEXT",
           "links": null
         },
         {
+          "localized_name": "meta",
           "name": "meta",
           "type": "OLLAMA_META",
           "links": null
@@ -4252,6 +6117,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 436
@@ -4259,6 +6125,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -4295,9 +6162,20 @@
       "flags": {},
       "order": 17,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -4337,9 +6215,20 @@
       },
       "order": 18,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": []
@@ -4378,6 +6267,133 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "enable_mirostat",
+          "name": "enable_mirostat",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat",
+          "name": "mirostat",
+          "type": "INT",
+          "widget": {
+            "name": "mirostat"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_mirostat_eta",
+          "name": "enable_mirostat_eta",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat_eta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat_eta",
+          "name": "mirostat_eta",
+          "type": "FLOAT",
+          "widget": {
+            "name": "mirostat_eta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_mirostat_tau",
+          "name": "enable_mirostat_tau",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_mirostat_tau"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mirostat_tau",
+          "name": "mirostat_tau",
+          "type": "FLOAT",
+          "widget": {
+            "name": "mirostat_tau"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_num_ctx",
+          "name": "enable_num_ctx",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_num_ctx"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "num_ctx",
+          "name": "num_ctx",
+          "type": "INT",
+          "widget": {
+            "name": "num_ctx"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_repeat_last_n",
+          "name": "enable_repeat_last_n",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_repeat_last_n"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "repeat_last_n",
+          "name": "repeat_last_n",
+          "type": "INT",
+          "widget": {
+            "name": "repeat_last_n"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_repeat_penalty",
+          "name": "enable_repeat_penalty",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_repeat_penalty"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "repeat_penalty",
+          "name": "repeat_penalty",
+          "type": "FLOAT",
+          "widget": {
+            "name": "repeat_penalty"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_temperature",
+          "name": "enable_temperature",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_seed",
           "name": "enable_seed",
           "type": "BOOLEAN",
           "widget": {
@@ -4386,16 +6402,135 @@
           "link": 332
         },
         {
+          "localized_name": "seed",
           "name": "seed",
           "type": "INT",
           "widget": {
             "name": "seed"
           },
           "link": 333
+        },
+        {
+          "localized_name": "enable_stop",
+          "name": "enable_stop",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_stop"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "stop",
+          "name": "stop",
+          "type": "STRING",
+          "widget": {
+            "name": "stop"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_tfs_z",
+          "name": "enable_tfs_z",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_tfs_z"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "tfs_z",
+          "name": "tfs_z",
+          "type": "FLOAT",
+          "widget": {
+            "name": "tfs_z"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_num_predict",
+          "name": "enable_num_predict",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_num_predict"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "num_predict",
+          "name": "num_predict",
+          "type": "INT",
+          "widget": {
+            "name": "num_predict"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_top_k",
+          "name": "enable_top_k",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_k",
+          "name": "top_k",
+          "type": "INT",
+          "widget": {
+            "name": "top_k"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_top_p",
+          "name": "enable_top_p",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_p",
+          "name": "top_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enable_min_p",
+          "name": "enable_min_p",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_min_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "min_p",
+          "name": "min_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "min_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "debug",
+          "name": "debug",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "options",
           "name": "options",
           "type": "OLLAMA_OPTIONS",
           "links": [
@@ -4467,6 +6602,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string",
           "name": "string",
           "type": "STRING",
           "widget": {
@@ -4475,6 +6611,16 @@
           "link": 49
         },
         {
+          "localized_name": "find",
+          "name": "find",
+          "type": "STRING",
+          "widget": {
+            "name": "find"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "replace",
           "name": "replace",
           "type": "STRING",
           "widget": {
@@ -4485,6 +6631,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -4529,6 +6676,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string",
           "name": "string",
           "type": "STRING",
           "widget": {
@@ -4537,6 +6685,16 @@
           "link": 66
         },
         {
+          "localized_name": "find",
+          "name": "find",
+          "type": "STRING",
+          "widget": {
+            "name": "find"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "replace",
           "name": "replace",
           "type": "STRING",
           "widget": {
@@ -4547,6 +6705,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": []
@@ -4587,9 +6746,20 @@
       },
       "order": 19,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -4628,9 +6798,20 @@
       },
       "order": 20,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -4667,9 +6848,20 @@
       "flags": {},
       "order": 21,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -4707,9 +6899,29 @@
       "flags": {},
       "order": 22,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
@@ -4728,7 +6940,7 @@
         }
       },
       "widgets_values": [
-        "flux\\flux1-krea-dev.safetensors",
+        "flux/flux1-krea-dev.safetensors",
         "default"
       ]
     },
@@ -4746,9 +6958,48 @@
       "flags": {},
       "order": 23,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "clip_name1",
+          "name": "clip_name1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name2",
+          "name": "clip_name2",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "CLIP",
           "name": "CLIP",
           "type": "CLIP",
           "links": [
@@ -4767,8 +7018,8 @@
         }
       },
       "widgets_values": [
-        "flux\\ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
-        "flux\\t5xxl_fp16.safetensors",
+        "flux/ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
+        "flux/t5xxl_fp16.safetensors",
         "flux",
         "default"
       ]
@@ -4787,9 +7038,65 @@
       "flags": {},
       "order": 24,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "swap_dimensions",
+          "name": "swap_dimensions",
+          "type": "COMBO",
+          "widget": {
+            "name": "swap_dimensions"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "upscale_factor",
+          "name": "upscale_factor",
+          "type": "FLOAT",
+          "widget": {
+            "name": "upscale_factor"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "width",
           "name": "width",
           "type": "INT",
           "links": [
@@ -4799,6 +7106,7 @@
           ]
         },
         {
+          "localized_name": "height",
           "name": "height",
           "type": "INT",
           "links": [
@@ -4808,21 +7116,25 @@
           ]
         },
         {
+          "localized_name": "upscale_factor",
           "name": "upscale_factor",
           "type": "FLOAT",
           "links": null
         },
         {
+          "localized_name": "batch_size",
           "name": "batch_size",
           "type": "INT",
           "links": null
         },
         {
+          "localized_name": "empty_latent",
           "name": "empty_latent",
           "type": "LATENT",
           "links": null
         },
         {
+          "localized_name": "show_help",
           "name": "show_help",
           "type": "STRING",
           "links": null
@@ -4861,9 +7173,20 @@
       "flags": {},
       "order": 25,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "CLIP_VISION",
           "name": "CLIP_VISION",
           "type": "CLIP_VISION",
           "links": [
@@ -4891,7 +7214,7 @@
         ]
       },
       "widgets_values": [
-        "flux\\sigclip_vision_patch14_384.safetensors"
+        "flux/sigclip_vision_patch14_384.safetensors"
       ]
     },
     {
@@ -4908,9 +7231,20 @@
       "flags": {},
       "order": 26,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "name",
+          "name": "name",
+          "type": "COMBO",
+          "widget": {
+            "name": "name"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "MODEL_PATCH",
           "name": "MODEL_PATCH",
           "type": "MODEL_PATCH",
           "links": [
@@ -4929,7 +7263,7 @@
         }
       },
       "widgets_values": [
-        "flux\\uso-flux1-projector-v1.safetensors"
+        "flux/uso-flux1-projector-v1.safetensors"
       ]
     },
     {
@@ -4948,13 +7282,33 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 439
+        },
+        {
+          "localized_name": "lora_name",
+          "name": "lora_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_model",
+          "name": "strength_model",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
@@ -4973,7 +7327,7 @@
         }
       },
       "widgets_values": [
-        "flux\\uso-flux1-dit-lora-v1.safetensors",
+        "flux/uso-flux1-dit-lora-v1.safetensors",
         1
       ]
     },
@@ -4993,6 +7347,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "width",
           "name": "width",
           "type": "INT",
           "widget": {
@@ -5001,16 +7356,36 @@
           "link": 341
         },
         {
+          "localized_name": "height",
           "name": "height",
           "type": "INT",
           "widget": {
             "name": "height"
           },
           "link": 342
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "color",
+          "name": "color",
+          "type": "INT",
+          "widget": {
+            "name": "color"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -5054,12 +7429,50 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "multiline_text",
           "name": "multiline_text",
           "shape": 7,
           "type": "STRING",
           "link": 83
         },
         {
+          "localized_name": "file_path",
+          "name": "file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "file_path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dictionary_name",
+          "name": "dictionary_name",
+          "type": "STRING",
+          "widget": {
+            "name": "dictionary_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "label",
+          "name": "label",
+          "type": "STRING",
+          "widget": {
+            "name": "label"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "index",
           "name": "index",
           "type": "INT",
           "widget": {
@@ -5070,6 +7483,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "line_text",
           "name": "line_text",
           "type": "STRING",
           "links": [
@@ -5079,6 +7493,7 @@
           ]
         },
         {
+          "localized_name": "dictionary",
           "name": "dictionary",
           "type": "DICT",
           "links": []
@@ -5122,6 +7537,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string_a",
           "name": "string_a",
           "type": "STRING",
           "widget": {
@@ -5130,16 +7546,27 @@
           "link": 379
         },
         {
+          "localized_name": "string_b",
           "name": "string_b",
           "type": "STRING",
           "widget": {
             "name": "string_b"
           },
           "link": 380
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": []
@@ -5180,6 +7607,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 54
@@ -5187,6 +7615,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -5223,11 +7652,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "any_1",
           "name": "any_1",
           "type": "*",
           "link": 88
         },
         {
+          "localized_name": "any_2",
           "name": "any_2",
           "type": "*",
           "link": 419
@@ -5235,6 +7666,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "batch",
           "name": "batch",
           "type": "*",
           "links": [
@@ -5270,11 +7702,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "samples",
           "name": "samples",
           "type": "LATENT",
           "link": 450
         },
         {
+          "localized_name": "vae",
           "name": "vae",
           "type": "VAE",
           "link": 478
@@ -5282,6 +7716,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -5318,12 +7753,14 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "flow",
           "name": "flow",
           "shape": 5,
           "type": "FLOW_CONTROL",
           "link": 90
         },
         {
+          "localized_name": "initial_value1",
           "name": "initial_value1",
           "shape": 7,
           "type": "*",
@@ -5337,6 +7774,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "value1",
           "name": "value1",
           "type": "*",
           "links": [
@@ -5381,12 +7819,14 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "initial_value1",
           "name": "initial_value1",
           "shape": 7,
           "type": "*",
           "link": 96
         },
         {
+          "localized_name": "total",
           "name": "total",
           "type": "INT",
           "widget": {
@@ -5402,6 +7842,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "flow",
           "name": "flow",
           "shape": 5,
           "type": "FLOW_CONTROL",
@@ -5410,6 +7851,7 @@
           ]
         },
         {
+          "localized_name": "index",
           "name": "index",
           "type": "INT",
           "links": [
@@ -5417,6 +7859,7 @@
           ]
         },
         {
+          "localized_name": "value1",
           "name": "value1",
           "type": "*",
           "links": [
@@ -5463,10 +7906,20 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "initial_value1",
           "name": "initial_value1",
           "shape": 7,
           "type": "*",
           "link": 453
+        },
+        {
+          "localized_name": "total",
+          "name": "total",
+          "type": "INT",
+          "widget": {
+            "name": "total"
+          },
+          "link": null
         },
         {
           "name": "initial_value2",
@@ -5476,6 +7929,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "flow",
           "name": "flow",
           "shape": 5,
           "type": "FLOW_CONTROL",
@@ -5484,6 +7938,7 @@
           ]
         },
         {
+          "localized_name": "index",
           "name": "index",
           "type": "INT",
           "links": [
@@ -5491,6 +7946,7 @@
           ]
         },
         {
+          "localized_name": "value1",
           "name": "value1",
           "type": "*",
           "links": [
@@ -5537,11 +7993,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "any_1",
           "name": "any_1",
           "type": "*",
           "link": 458
         },
         {
+          "localized_name": "any_2",
           "name": "any_2",
           "type": "*",
           "link": 457
@@ -5549,6 +8007,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "batch",
           "name": "batch",
           "type": "*",
           "links": [
@@ -5584,11 +8043,22 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "link": 252
         },
         {
+          "localized_name": "batch_index",
+          "name": "batch_index",
+          "type": "INT",
+          "widget": {
+            "name": "batch_index"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "length",
           "name": "length",
           "type": "INT",
           "widget": {
@@ -5599,6 +8069,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -5637,9 +8108,29 @@
       "flags": {},
       "order": 27,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -5647,6 +8138,7 @@
           ]
         },
         {
+          "localized_name": "MASK",
           "name": "MASK",
           "type": "MASK",
           "links": null
@@ -5686,11 +8178,13 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "link": 477
         },
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "widget": {
@@ -5701,6 +8195,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -5731,7 +8226,7 @@
         6380.76416015625
       ],
       "size": [
-        197.712890625,
+        204.134765625,
         26
       ],
       "flags": {},
@@ -5739,6 +8234,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "conditioning",
           "name": "conditioning",
           "type": "CONDITIONING",
           "link": 444
@@ -5746,6 +8242,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "CONDITIONING",
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
@@ -5779,9 +8276,38 @@
       "flags": {},
       "order": 28,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
@@ -5819,9 +8345,47 @@
       "flags": {},
       "order": 29,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "color",
+          "name": "color",
+          "type": "INT",
+          "widget": {
+            "name": "color"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -5865,6 +8429,7 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "text",
           "name": "text",
           "type": "STRING",
           "link": 466
@@ -5872,6 +8437,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "shape": 6,
           "type": "STRING",
@@ -5910,13 +8476,33 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "link": 464
+        },
+        {
+          "localized_name": "upscale_method",
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "largest_size",
+          "name": "largest_size",
+          "type": "INT",
+          "widget": {
+            "name": "largest_size"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -5955,12 +8541,50 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "multiline_text",
           "name": "multiline_text",
           "shape": 7,
           "type": "STRING",
           "link": 456
         },
         {
+          "localized_name": "file_path",
+          "name": "file_path",
+          "type": "STRING",
+          "widget": {
+            "name": "file_path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dictionary_name",
+          "name": "dictionary_name",
+          "type": "STRING",
+          "widget": {
+            "name": "dictionary_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "label",
+          "name": "label",
+          "type": "STRING",
+          "widget": {
+            "name": "label"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "index",
           "name": "index",
           "type": "INT",
           "widget": {
@@ -5971,6 +8595,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "line_text",
           "name": "line_text",
           "type": "STRING",
           "links": [
@@ -5978,6 +8603,7 @@
           ]
         },
         {
+          "localized_name": "dictionary",
           "name": "dictionary",
           "type": "DICT",
           "links": []
@@ -6019,12 +8645,14 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "flow",
           "name": "flow",
           "shape": 5,
           "type": "FLOW_CONTROL",
           "link": 460
         },
         {
+          "localized_name": "initial_value1",
           "name": "initial_value1",
           "shape": 7,
           "type": "*",
@@ -6038,6 +8666,7 @@
       ],
       "outputs": [
         {
+          "localized_name": "value1",
           "name": "value1",
           "type": "*",
           "links": [
@@ -6081,13 +8710,70 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 94
+        },
+        {
+          "localized_name": "border_thickness",
+          "name": "border_thickness",
+          "type": "INT",
+          "widget": {
+            "name": "border_thickness"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "border_color",
+          "name": "border_color",
+          "type": "COMBO",
+          "widget": {
+            "name": "border_color"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "outline_thickness",
+          "name": "outline_thickness",
+          "type": "INT",
+          "widget": {
+            "name": "outline_thickness"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "outline_color",
+          "name": "outline_color",
+          "type": "COMBO",
+          "widget": {
+            "name": "outline_color"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_columns",
+          "name": "max_columns",
+          "type": "INT",
+          "widget": {
+            "name": "max_columns"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "border_color_hex",
+          "name": "border_color_hex",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "border_color_hex"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "links": [
@@ -6095,6 +8781,7 @@
           ]
         },
         {
+          "localized_name": "show_help",
           "name": "show_help",
           "type": "STRING",
           "links": null
@@ -6135,13 +8822,33 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "link": 471
+        },
+        {
+          "localized_name": "batch_index",
+          "name": "batch_index",
+          "type": "INT",
+          "widget": {
+            "name": "batch_index"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "length",
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "IMAGE",
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
@@ -6182,28 +8889,87 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 476
         },
         {
+          "localized_name": "positive",
           "name": "positive",
           "type": "CONDITIONING",
           "link": 446
         },
         {
+          "localized_name": "negative",
           "name": "negative",
           "type": "CONDITIONING",
           "link": 447
         },
         {
+          "localized_name": "latent_image",
           "name": "latent_image",
           "type": "LATENT",
           "link": 448
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "LATENT",
           "name": "LATENT",
           "type": "LATENT",
           "links": [
@@ -6247,13 +9013,33 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 438
+        },
+        {
+          "localized_name": "lora_name",
+          "name": "lora_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_model",
+          "name": "strength_model",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
@@ -6272,7 +9058,7 @@
         }
       },
       "widgets_values": [
-        "flux\\storyboarding.safetensors",
+        "flux/storyboarding.safetensors",
         0.2
       ]
     },
@@ -6290,9 +9076,20 @@
       "flags": {},
       "order": 30,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "ckpt_name",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": [
@@ -6300,11 +9097,13 @@
           ]
         },
         {
+          "localized_name": "CLIP",
           "name": "CLIP",
           "type": "CLIP",
           "links": []
         },
         {
+          "localized_name": "VAE",
           "name": "VAE",
           "type": "VAE",
           "links": []
@@ -6321,7 +9120,7 @@
         }
       },
       "widgets_values": [
-        "flux\\flux1-dev-fp8.safetensors"
+        "flux/flux1-dev-fp8.safetensors"
       ]
     },
     {
@@ -6392,19 +9191,19 @@
         },
         {
           "on": true,
-          "lora": "flux\\FLUX-dev-lora-AntiBlur.safetensors",
+          "lora": "flux/FLUX-dev-lora-AntiBlur.safetensors",
           "strength": 0.4,
           "strengthTwo": null
         },
         {
           "on": true,
-          "lora": "flux\\FLUX-dev-lora-add_details.safetensors",
+          "lora": "flux/FLUX-dev-lora-add_details.safetensors",
           "strength": 0.4,
           "strengthTwo": null
         },
         {
           "on": true,
-          "lora": "flux\\Hyper-FLUX.1-dev-16steps-lora.safetensors",
+          "lora": "flux/Hyper-FLUX.1-dev-16steps-lora.safetensors",
           "strength": 0.16,
           "strengthTwo": null
         },
@@ -6426,9 +9225,20 @@
       "flags": {},
       "order": 31,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "VAE",
           "name": "VAE",
           "type": "VAE",
           "links": [
@@ -6448,7 +9258,7 @@
         }
       },
       "widgets_values": [
-        "flux\\ae.safetensors"
+        "flux/ae.safetensors"
       ]
     },
     {
@@ -6467,13 +9277,70 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 472
+        },
+        {
+          "localized_name": "border_thickness",
+          "name": "border_thickness",
+          "type": "INT",
+          "widget": {
+            "name": "border_thickness"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "border_color",
+          "name": "border_color",
+          "type": "COMBO",
+          "widget": {
+            "name": "border_color"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "outline_thickness",
+          "name": "outline_thickness",
+          "type": "INT",
+          "widget": {
+            "name": "outline_thickness"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "outline_color",
+          "name": "outline_color",
+          "type": "COMBO",
+          "widget": {
+            "name": "outline_color"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_columns",
+          "name": "max_columns",
+          "type": "INT",
+          "widget": {
+            "name": "max_columns"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "border_color_hex",
+          "name": "border_color_hex",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "border_color_hex"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "links": [
@@ -6481,6 +9348,7 @@
           ]
         },
         {
+          "localized_name": "show_help",
           "name": "show_help",
           "type": "STRING",
           "links": null
@@ -6521,34 +9389,53 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "clip_vision",
           "name": "clip_vision",
           "type": "CLIP_VISION",
           "link": 440
         },
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "link": 465
         },
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 442
         },
         {
+          "localized_name": "model_patch",
           "name": "model_patch",
           "type": "MODEL_PATCH",
           "link": 441
+        },
+        {
+          "name": "crop",
+          "type": "COMBO",
+          "widget": {
+            "name": "crop"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "MODEL",
           "name": "MODEL",
           "type": "MODEL",
           "links": []
         }
       ],
       "properties": {
+        "proxyWidgets": [
+          [
+            "-1",
+            "crop"
+          ]
+        ],
         "cnr_id": "comfy-core",
         "ver": "0.3.56",
         "ue_properties": {
@@ -6579,16 +9466,36 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string_a",
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "string_b",
           "name": "string_b",
           "type": "STRING",
           "widget": {
             "name": "string_b"
           },
           "link": 467
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -6628,16 +9535,36 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "string_a",
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "string_b",
           "name": "string_b",
           "type": "STRING",
           "widget": {
             "name": "string_b"
           },
           "link": 480
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -6646,13 +9573,14 @@
         }
       ],
       "properties": {
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {}
-        },
         "cnr_id": "comfy-core",
         "ver": "0.3.60",
-        "Node name for S&R": "StringConcatenate"
+        "Node name for S&R": "StringConcatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
       },
       "widgets_values": [
         "Loose action sketch , storyboard thumnail , annotated",
@@ -6676,9 +9604,19 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 452
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -6712,9 +9650,19 @@
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 473
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [],
@@ -6746,9 +9694,20 @@
       "flags": {},
       "order": 32,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
@@ -6817,7 +9776,7 @@
       49,
       0,
       54,
-      1,
+      2,
       "STRING"
     ],
     [
@@ -6865,7 +9824,7 @@
       49,
       0,
       58,
-      1,
+      2,
       "STRING"
     ],
     [
@@ -7009,7 +9968,7 @@
       91,
       1,
       83,
-      1,
+      5,
       "INT"
     ],
     [
@@ -7057,7 +10016,7 @@
       96,
       0,
       88,
-      1,
+      2,
       "INT"
     ],
     [
@@ -7297,7 +10256,7 @@
       132,
       1,
       134,
-      1,
+      5,
       "INT"
     ],
     [
@@ -7441,7 +10400,7 @@
       193,
       0,
       176,
-      0,
+      14,
       "BOOLEAN"
     ],
     [
@@ -7449,7 +10408,7 @@
       201,
       0,
       176,
-      1,
+      15,
       "INT"
     ],
     [
@@ -7457,7 +10416,7 @@
       193,
       0,
       202,
-      0,
+      14,
       "BOOLEAN"
     ],
     [
@@ -7465,7 +10424,7 @@
       201,
       0,
       202,
-      1,
+      15,
       "INT"
     ],
     [
@@ -7481,7 +10440,7 @@
       201,
       0,
       175,
-      1,
+      15,
       "INT"
     ],
     [
@@ -7489,7 +10448,7 @@
       193,
       0,
       175,
-      0,
+      14,
       "BOOLEAN"
     ],
     [
@@ -7585,7 +10544,7 @@
       72,
       0,
       99,
-      5,
+      6,
       "STRING"
     ],
     [
@@ -7681,7 +10640,7 @@
       239,
       0,
       59,
-      1,
+      2,
       "STRING"
     ],
     [
@@ -7841,7 +10800,7 @@
       257,
       1,
       258,
-      1,
+      5,
       "INT"
     ],
     [
@@ -7913,7 +10872,7 @@
       266,
       0,
       268,
-      0,
+      1,
       "STRING"
     ],
     [
@@ -7969,7 +10928,7 @@
       268,
       0,
       270,
-      0,
+      1,
       "STRING"
     ],
     [
@@ -8154,10 +11113,10 @@
               85
             ],
             "localized_name": "clip_vision",
-            "pos": {
-              "0": -690,
-              "1": 628
-            }
+            "pos": [
+              -690,
+              628
+            ]
           },
           {
             "id": "4e819086-d02a-4b6c-8383-e7939729ba47",
@@ -8167,10 +11126,10 @@
               86
             ],
             "localized_name": "image",
-            "pos": {
-              "0": -690,
-              "1": 648
-            }
+            "pos": [
+              -690,
+              648
+            ]
           },
           {
             "id": "2bea204b-da22-43d3-9591-9ef6e66a8169",
@@ -8180,10 +11139,10 @@
               88
             ],
             "localized_name": "model",
-            "pos": {
-              "0": -690,
-              "1": 668
-            }
+            "pos": [
+              -690,
+              668
+            ]
           },
           {
             "id": "4effe73e-9aa2-4cc5-acde-5df0cf566455",
@@ -8193,10 +11152,10 @@
               89
             ],
             "localized_name": "model_patch",
-            "pos": {
-              "0": -690,
-              "1": 688
-            }
+            "pos": [
+              -690,
+              688
+            ]
           },
           {
             "id": "d9a5affb-b212-4f50-8591-c3dc535a2e53",
@@ -8205,10 +11164,10 @@
             "linkIds": [
               91
             ],
-            "pos": {
-              "0": -690,
-              "1": 708
-            }
+            "pos": [
+              -690,
+              708
+            ]
           }
         ],
         "outputs": [
@@ -8220,10 +11179,10 @@
               90
             ],
             "localized_name": "MODEL",
-            "pos": {
-              "0": 210,
-              "1": 658
-            }
+            "pos": [
+              210,
+              658
+            ]
           }
         ],
         "widgets": [],
@@ -8280,7 +11239,9 @@
               "ver": "0.3.56",
               "Node name for S&R": "CLIPVisionEncode",
               "ue_properties": {
-                "widget_ue_connectable": {}
+                "widget_ue_connectable": {},
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
               }
             },
             "widgets_values": [
@@ -8336,7 +11297,9 @@
               "ver": "0.3.56",
               "Node name for S&R": "USOStyleReference",
               "ue_properties": {
-                "widget_ue_connectable": {}
+                "widget_ue_connectable": {},
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
               }
             },
             "widgets_values": []
@@ -8403,7 +11366,8 @@
         ],
         "extra": {
           "ue_links": [],
-          "links_added_by_ue": []
+          "links_added_by_ue": [],
+          "workflowRendererVersion": "LG"
         }
       }
     ]
@@ -8419,7 +11383,8 @@
     },
     "frontendVersion": "1.26.13",
     "ue_links": [],
-    "links_added_by_ue": []
+    "links_added_by_ue": [],
+    "workflowRendererVersion": "LG"
   },
   "version": 0.4
 }
